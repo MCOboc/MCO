@@ -1,0 +1,360 @@
+@charset "UTF-8";
+
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+/* CSS pour l'image du logo BOCCARD */
+.logo {
+    width: 150px; /* Ajustez la largeur selon vos préférences */
+    position: absolute;
+    top: 20px; /* Position en haut */
+    left: 50px; /* Position à gauche */
+}
+/* CSS pour le conteneur */
+.container {
+    background-color: #002c3b;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* CSS pour le bandeau */
+.breadcrumb {
+    color: #002c3b;
+    padding: 1px;
+    text-align: left;
+    font-size: 15px; /* Définissez la taille de police souhaitée, par exemple 14px */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+.breadcrumb a {
+  text-decoration: underline; /* Soulignement du texte */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #00b3ff; /* Couleur du lien */
+}
+
+
+/* CSS pour le texte "Recherche" */
+h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+/*========================CORPS DE PAGE========================================================================*/
+
+/* Bouton Référence */
+.ref-button {
+    position: absolute; 
+    top: 150px; 
+    left: 300px; 
+    width: 280px; 
+    height: 100px; 
+    padding: 0 12px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-family: Arial, Helvetica, sans-serif; /* Body */
+    font-size: 14px; 
+    font-weight: 400; 
+    line-height: 22px; 
+    color: #FFFFFFFF; /* white */
+    background: #00b3ff; /* primary-500 */
+    opacity: 1; 
+    border: none; 
+    border-radius: 4px; /* border-m */
+  }
+  /* Survol souris Bouton Référence */
+  .ref-button:hover {
+    color: #FFFFFFFF; /* white */
+    background: #0056b3; /* primary-550 */
+  }
+  /* Bouton Référence cliqué */
+  .ref-button:hover:active {
+    color: #FFFFFFFF; /* white */
+    background: #004999; /* primary-600 */
+  }
+  /* Bouton Référence désactivé */
+  .ref-button:disabled {
+    opacity: 0.4; 
+  }
+
+  /* Bouton WGTID*/
+.wgtid-button {
+    position: absolute; 
+    top: 150px; 
+    right:300px; 
+    width: 280px; 
+    height: 100px; 
+    padding: 0 12px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-family: Arial, Helvetica, sans-serif; /* Body */
+    font-size: 14px; 
+    font-weight: 400; 
+    line-height: 22px; 
+    color: #FFFFFFFF; /* white */
+    background: #00b3ff; /* primary-500 */
+    opacity: 1; 
+    border: none; 
+    border-radius: 4px; /* border-m */
+  }
+  /* Survol souris Bouton WGTID */
+  .wgtid-button:hover {
+    color: #FFFFFFFF; /* white */
+    background: #0056b3; /* primary-550 */
+  }
+  /* Bouton WGTID cliqué */
+  .wgtid-button:hover:active {
+    color: #FFFFFFFF; /* white */
+    background: #004999; /* primary-600 */
+  }
+  /* Bouton WGTID désactivé */
+  .wgtid-button:disabled {
+    opacity: 0.4; 
+  }
+
+  /* Bouton retour */
+.return-button {
+    position: absolute; 
+    top: 650px; 
+    left: 1262px; 
+    height: 36px; 
+    padding: 0 12px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-family: Arial, Helvetica, sans-serif; /* Body */
+    font-size: 14px; 
+    font-weight: 400; 
+    line-height: 22px; 
+    color: #FFFFFFFF; /* white */
+    background: #00b3ff; /* primary-500 */
+    opacity: 1; 
+    border: none; 
+    border-radius: 4px; /* border-m */
+  }
+  /* Survol souris bouton Retour */
+  .return-button:hover {
+    color: #FFFFFFFF; /* white */
+    background: #0056b3; /* primary-550 */
+  }
+  /* Bouton Retour cliqué */
+  .return-button:hover:active {
+    color: #FFFFFFFF; /* white */
+    background: #004999; /* primary-600 */
+  }
+  /* Bouton Retour désactivé */
+  .return-button:disabled {
+    opacity: 0.4; 
+  }
+
+  /* Positionnement des éléments de recherche côte à côte */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  /* Bouton Rechercher */
+  .search-button {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-family: Arial, Helvetica, sans-serif; /* Body */
+    font-size: 22px; 
+    font-weight: 400; 
+    line-height: 32px; 
+    color: #FFFFFFFF; /* white */
+    background: #00b3ff; /* primary-500 */
+    opacity: 1; 
+    border: none; 
+    border-radius: 4px; /* border-m */
+    transition: transform 0.2s ease; /* Ajoutez une transition pour un effet de douceur */
+     /* Ajoutez une échelle par défaut */
+    transform: scale(1);
+    cursor: pointer; /* Curseur par défaut (flèche) */
+    margin-left: 5px; 
+  }
+  .search-button .i {
+  width: 10px; 
+  height: 10px; 
+  fill: #FFFFFFFF; /* white */ 
+  }
+  /* Survol souris bouton Rechercher */
+  .search-button:hover {
+    color: #FFFFFFFF; /* white */
+    background: #00b3ff; /* primary-550 */
+   /* Appliquez un effet de zoom au survol */
+   transform: scale(1.1); /* Agrandit le bouton de 10% au survol */
+   cursor: pointer; /* Exemple de curseur personnalisé (crosshair) au survol */
+  }
+  /* Bouton Rechercher cliqué */
+  .search-button:hover:active {
+    color: #FFFFFFFF; /* white */
+    background: #004999; /* primary-600 */
+  }
+  /* Bouton Recherche désactivé */
+  .search-button:disabled {
+    opacity: 0.4; 
+  }
+
+  /* Bouton Nouvelle Recherche */
+.newsearch-button {
+  position: absolute; 
+  top: 650px; 
+  left: 300px; 
+  width: 280px; 
+  height: 100px; 
+  padding: 0 12px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-family: Arial, Helvetica, sans-serif; /* Body */
+  font-size: 14px; 
+  font-weight: 400; 
+  line-height: 20px; 
+  color: #FFFFFFFF; /* white */
+  background: #00b3ff; /* primary-500 */
+  opacity: 1; 
+  border: none; 
+  border-radius: 4px; /* border-m */
+}
+/* Survol souris Bouton Nouvelle Recherche */
+.newsearch-button:hover {
+  color: #FFFFFFFF; /* white */
+  background: #0056b3; /* primary-550 */
+}
+/* Bouton Nouvelle Recherche cliqué */
+.newsearch-button:hover:active {
+  color: #FFFFFFFF; /* white */
+  background: #004999; /* primary-600 */
+}
+/* Bouton Nouvelle Recherche désactivé */
+.newsearch-button:disabled {
+  opacity: 0.4; 
+}
+
+/* Bouton Annuler */
+.cancel-button {
+  width: 150px; /* Largeur souhaitée */
+  height: 50px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif; /* Body */
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #FFFFFFFF; /* white */
+  background: #00b3ff; /* primary-500 */
+  opacity: 1;
+  border: none;
+  border-radius: 4px; /* border-m */
+  margin: 0 auto; /* Centrer horizontalement */
+  margin-top: 30px;
+}
+
+  /* Survol souris Bouton Annuler */
+  .cancel-button:hover {
+    color: #FFFFFFFF; /* white */
+    background: #0056b3; /* primary-550 */
+  }
+  /* Bouton Annuler cliqué */
+  .cancel-button:hover:active {
+    color: #FFFFFFFF; /* white */
+    background: #004999; /* primary-600 */
+  }
+  /* Bouton Annuler désactivé */
+  .cancel-button:disabled {
+    opacity: 0.4; 
+  }
+  
+  /* Bouton Rechav */
+.rechav-button {
+    width: 280px; /* Largeur souhaitée */
+    height: 100px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif; /* Body */
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #FFFFFFFF; /* white */
+    background: #00b3ff; /* primary-500 */
+    opacity: 1;
+    border: none;
+    border-radius: 4px; /* border-m */
+    margin: 0 auto; /* Centrer horizontalement */
+    margin-top: 300px;
+  }
+  
+    /* Survol souris Bouton Rechav */
+    .rechav-button:hover {
+      color: #FFFFFFFF; /* white */
+      background: #0056b3; /* primary-550 */
+    }
+    /* Bouton Rechav cliqué */
+    .rechav-button:hover:active {
+      color: #FFFFFFFF; /* white */
+      background: #004999; /* primary-600 */
+    }
+    /* Bouton Rechav désactivé */
+    .rechav-button:disabled {
+      opacity: 0.4; 
+    }
+/*==============================================Fin CSS Boutons=======================*/
+
+/* Zone de saisie recherche */
+.search-input.uppercase {
+  text-transform: uppercase; /*Force la saisie en majuscule*/
+}
+/* Zone de saisie recherche */
+#search-input {
+  opacity: 1;
+  border-radius: 3px; /* border-m */
+  font-size: 18px;
+}
+
+/* Position Zone de texte des résultats de recherche */
+.results-text {
+  position: absolute; 
+  top: 400px; 
+  left: 525px; 
+  opacity: 1; 
+  width: 800px; 
+  height: 800px; 
+  padding-top: 7px; 
+  padding-bottom: 7px; 
+  padding-left: 12px; 
+  padding-right: 12px; 
+  font-size: 14px; 
+  font-weight: 400; 
+  line-height: 22px; 
+  color: #171A1FFF; /* neutral-900 */
+  background: #FFFFFFFF; /* white */
+  border-radius: 4px; /* border-m */
+  border-width: 1px; 
+  border-color: #9095A0FF; /* neutral-500 */
+}
+/* Survol souris de la zone de texte des résultats */
+.results-text hover {
+  background: #FFFFFFFF; /* white */
+  border-color: #6E7787FF; /* neutral-550 */
+  border-radius: 4px; /* border-m */
+}
+
+/* Zone de texte des résultats désactivée */
+.results-text disabled {
+  color: #171A1FFF; /* neutral-900 */
+  background: #FFFFFFFF; /* white */
+  border-color: #9095A0FF; /* neutral-500 */
+  border-radius: 4px; /* border-m */
+}

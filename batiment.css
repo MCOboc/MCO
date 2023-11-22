@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+/* CSS pour l'image du logo BOCCARD */
+.logo {
+    width: 150px; /* Ajustez la largeur selon vos préférences */
+    position: absolute;
+    top: 20px; /* Position en haut */
+    left: 50px; /* Position à gauche */
+}
+/* CSS pour le conteneur */
+.container {
+    background-color: #002c3b;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* CSS pour le bandeau */
+.breadcrumb {
+    color: #002c3b;
+    padding: 1px;
+    text-align: left;
+    font-size: 15px; /* Définissez la taille de police souhaitée, par exemple 14px */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+.breadcrumb a {
+  text-decoration: underline; /* Soulignement du texte */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #00b3ff; /* Couleur du lien */
+}
+
+
+/* CSS pour le texte "Recherche" */
+h1 {
+    font-size: 30px;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+/*========================CORPS DE PAGE========================================================================*/
+
+/* Container menus déroulants */
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+/* Menu déroulant Button 1 */
+.bat-dropdown {
+    display: block;
+    background-color: #002c3b;
+    color: #00b3ff;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.second-dropdown {
+    display: none;
+    background-color: #002c3b;
+    color: #00b3ff;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+.infotable-container {
+    display: flex;
+    color: #24597a;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.left-justify {
+    text-align: left;
+}
+.separator {
+    border-top: 1px solid #ccc; /* Style de la ligne de séparation */
+}
+.vertical-separator {
+    border-top: 1px solid #ccc; /* Style de la ligne de séparation */
+}

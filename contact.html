@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="contact.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="contact.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <img src="logo boccard.png" alt="Logo" class="logo">
+        <h1>Formulaire de contact</h1>
+    </div>
+
+    <div class="breadcrumb">
+        <a href="index.html">Accueil</a> &gt; <span>Contact</span>
+    </div>
+
+    <div class="explication-container" id="explication-container">
+        <h2>Ce formulaire de contact vous permet de faire parvenir au gestionnaire du site des suggestions d'amélioration,<br> des problèmes rencontrés sur le site, ou toute autre information que vous jugez nécessaire de faire remonter.</h2>
+    </div>
+     <label class="email" for ="email">Votre e-mail :</label>
+        <input type="text" id="textemail" name="textemail" placeholder="example@abc.com">
+        <label class="name" style="display: block"; for="name">Nom:</label>
+        <input type="text" id="nom" name="nom" style="display: block"; placeholder="Entrez le nom">
+        <label class="surname" style="display: block"; for="prenom">Prénom:</label>
+        <input type="text" id="prenom" name="prenom" style="display: block"; placeholder="Entrez le prénom">
+       
+        <label class="contenu" for ="contenu">Contenu de votre message :</label>
+        <textarea class="zonetexte" id="zonetexte" name="zonetexte"></textarea>
+       
+        <button class="return-button" onclick="redirectToAccueilPage()">Retour à l'accueil</button>
+      
+
+</body>
+</html>

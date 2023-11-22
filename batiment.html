@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bâtiment Details</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="batiment.css">
+    <link rel="stylesheet" type="text/css" href="search.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="logo boccard.png" alt="Logo" class="logo">
+        <h1>Recherche avancée</h1>
+    </div>
+
+      <!-- Ajoutez le bandeau ici -->
+    <div class="breadcrumb">
+        <a href="index.html">Accueil</a> &gt;&gt; <span>Recherche avancée</span>
+    </div>
+
+    <div class="dropdown-container" style="display: flex;">
+    <select id="bat-dropdown" class="bat-dropdown">
+        <option value="">Choisissez un bâtiment</option>
+    </select>
+    
+    <select id="second-dropdown" class="second-dropdown">
+        <option value="Choisissez un circuit">Choisissez un circuit</option>
+        <option value="Voir Tout">Voir tout</option>
+    </select>
+    </div>
+
+    <script src="batiment.js"></script>
+
+    <button class="cancel-button" id="cancel-button" style="display: flex;" onclick="redirectToSearchPage()">Annuler</button>
+
+   
+    <div id="infotable-container" class="infotable-container">
+    <table id="resultTable" class="infotable">
+        <thead>
+            <!-- Les en-têtes de colonne seront ajoutés ici dynamiquement -->
+        </thead>
+        <tbody>
+            <!-- Les données seront ajoutées ici dynamiquement -->
+        </tbody>
+    </table>
+</div>
+
+        
+        
+
+
+</body>
+</html>

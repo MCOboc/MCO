@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+/* CSS pour l'image du logo BOCCARD */
+.logo {
+    width: 150px; /* Ajustez la largeur selon vos préférences */
+    position: absolute;
+    top: 20px; /* Position en haut */
+    left: 50px; /* Position à gauche */
+}
+/* CSS pour le conteneur */
+.container {
+    background-color: #002c3b;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+/* CSS pour le bandeau */
+.breadcrumb {
+    color: #002c3b;
+    padding: 1px;
+    text-align: left;
+    font-size: 15px; /* Définissez la taille de police souhaitée, par exemple 14px */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+.breadcrumb a {
+  text-decoration: underline; /* Soulignement du texte */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #00b3ff; /* Couleur du lien */
+}
+
+/* CSS pour le texte "Recherche" */
+h1 {
+    font-size: 30px;
+    margin: 0;
+}
+
+/*========================CORPS DE PAGE========================================================================*/
+
+/* CSS pour le texte "MCO" */
+
+.consultation-container {
+    color: #24597a;
+    position: fixed;
+    width:30%;
+    left: 9%;
+    top:15%;
+    padding: 20px; /* Ajout de rembourrage pour l'espacement */
+}
+
+h2 {
+    font-size: 16px;
+    margin-top: 20px; /* Correction de la valeur de la marge */
+}
+
+h3 {
+    font-size: 10px;
+}
+/* CSS pour le conteneur du bouton */
+
+/* CSS pour le bouton "Commencer" */
+.search-button {
+    position: fixed;
+    left:20%;
+    top:40%;
+    width: 10%;
+    height: 5%;
+    background-color: #00b3ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.search-button:hover {
+    background-color: #0056b3;
+}
+.search-button:active {
+    background-color: #004999;
+}
+
+.alerte-container {
+    color: #24597a;
+    justify-content: center;
+    margin: 0 auto; /* Centrez horizontalement l'élément en utilisant une marge automatique */
+    position: fixed;
+    bottom: 0;
+    width: 100%; /* Assurez-vous que la largeur est à 100% pour occuper toute la largeur de la fenêtre */
+}
+
+.formulaire-container {
+    color: #24597a;
+    position: fixed;
+    width:30%;
+    right: 9%;
+    top:15%;
+    padding: 20px; /* Ajout de rembourrage pour l'espacement */
+}
+
+/* CSS pour le bouton "Commencer" */
+.formulaire-button {
+    position: fixed;
+    right:20%;
+    top:40%;
+    width: 10%;
+    height: 5%;
+    background-color: #00b3ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.formulaire-button:hover {
+    background-color: #0056b3;
+}
+.formulaire-button:active {
+    background-color: #004999;
+}
