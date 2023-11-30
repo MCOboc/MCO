@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
+  <title>Contact</title>
   <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript" src="contact.js"></script>
     <script type="text/javascript" src="script.js"></script>
@@ -14,6 +15,8 @@
     <div class="container" id="container">
         <img src="logo boccard.png" alt="Logo" class="logo">
         <h1>Formulaire de contact</h1>
+        <button class="return-button" onclick="redirectToAccueilPage()">
+            <i class="fa-solid fa-house"></i></button>
     </div>
 
     <div class="breadcrumb">
@@ -23,18 +26,24 @@
     <div class="explication-container" id="explication-container">
         <h2>Ce formulaire de contact vous permet de faire parvenir au gestionnaire du site des suggestions d'amélioration,<br> des problèmes rencontrés sur le site, ou toute autre information que vous jugez nécessaire de faire remonter.</h2>
     </div>
-     <label class="email" for ="email">Votre e-mail :</label>
+
+    <div class="formulaire-container" id="formulaire-container">
+        <label class="name"  for="name">Nom:</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom">
+        <label class="surname"  for="prenom">Prénom:</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom">
+        <label class="email" for ="email">Votre e-mail :</label>
         <input type="text" id="textemail" name="textemail" placeholder="example@abc.com">
-        <label class="name" style="display: block"; for="name">Nom:</label>
-        <input type="text" id="nom" name="nom" style="display: block"; placeholder="Entrez le nom">
-        <label class="surname" style="display: block"; for="prenom">Prénom:</label>
-        <input type="text" id="prenom" name="prenom" style="display: block"; placeholder="Entrez le prénom">
-       
         <label class="contenu" for ="contenu">Contenu de votre message :</label>
-        <textarea class="zonetexte" id="zonetexte" name="zonetexte"></textarea>
-       
-        <button class="return-button" onclick="redirectToAccueilPage()">Retour à l'accueil</button>
-      
+        <textarea class="zonetexte" id="zonetexte" name="zonetexte"></textarea>    
+        <button class="envoi-button" id="envoi-button"  onclick="sendEmail()">Envoyer</button>
+    </div>
+
+    <div class="confirmation-container" id="confirmation-container" style="display: none;">
+        <label class="envoiok" for="envoiok">Merci ! Vous aurez un retour par mail dans les plus brefs délais !</label>
+        <button class="formulaire-button" onclick="redirectToAccueilPage()"><i class="fa-solid fa-house"></i></button>
+        
+    </div>  
 
 </body>
 </html>

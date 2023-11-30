@@ -826,6 +826,43 @@ input[id="date"] {
     transform: scale(1); /* Agrandit le bouton de 10% au survol */
     background-color: #ccc;
 }
+#photobutton {
+    position:absolute;
+    width:2%;
+    height: 3%;
+    bottom:22%;
+    right: 40%;
+    background-color: #00b3ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease; /* Ajoutez une transition pour un effet de douceur */
+    /* Ajoutez une échelle par défaut */
+    transform: scale(1);
+}
+#photobutton:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Agrandit le bouton de 10% au survol */
+}
+#photobutton:active {
+    background-color: #004999;
+}
+#photobutton:disabled {
+    background-color: #ccc;
+}
+#photobutton:disabled:hover {
+    cursor:not-allowed;
+    transform: scale(1); /* Agrandit le bouton de 10% au survol */
+    background-color: #ccc;
+}
+.nomFichier {
+    position:absolute;
+    width: fit-content;
+    bottom:18%;
+    right: 39.5%;
+}
 .classtestred {
     font-size: 14px;
     border: 1px solid #ccc;
@@ -942,12 +979,9 @@ input[id="textemail"] {
     .vertical-separator {
         display:none;
     }
-.gauche-container{
-    position: relative;
-    width: 100%;
-}
+    
     .selection-container {
-        width:100%;
+        width: 100%;
         display: flex;
         position: relative; /* Utilisez "relative" pour positionner les éléments enfants de manière absolue par rapport à celui-ci */
         padding-top: 1%;
@@ -966,6 +1000,7 @@ input[id="textemail"] {
         width:100%;
         display: flex;
         padding-top: 5%;
+        padding-left: 5%;
         justify-content: flex-start;
     }
       
@@ -1021,6 +1056,7 @@ input[id="textemail"] {
         width:100%;
         display: flex;
         padding-top: 5%;
+        padding-left: 5%;
         justify-content: flex-start;
     }
       
@@ -1074,6 +1110,7 @@ input[id="textemail"] {
         width:100%;
         display: flex;
         padding-top: 5%;
+        padding-left: 5%;
         justify-content: flex-start;
     }
     
@@ -1280,11 +1317,11 @@ input[id="textemail"] {
         accent-color: #ff0000;
     }
     .mecashow {
-        width: fit-content;
-        position: absolute;
-        padding-top: 3%;
-        margin-left: 25%;
+        position: relative;
+        display: block;
+        padding-top: 8%;
         font-weight: bold;
+        left: 25%;
     }
     .manueltext {
         position: absolute;
@@ -1376,6 +1413,13 @@ input[id="textemail"] {
         transform: scale(1);
     }
 
+.infopdf-container {
+    position: relative;
+    width: 100%;
+    top: 20%;
+    right: 0%;
+    display: flex;
+    }
     .reset-button {
         display: flex;
         justify-content: center;
@@ -1397,28 +1441,25 @@ input[id="textemail"] {
         background-color: #004999;
         transform: scale(0.9); /* Agrandit le bouton de 10% au survol */
     }
-.droite-container {
-    position: relative;
-    width: 100%;
-}
-.infopdf-container {
+
+    .infopdf-container {
         position: relative;
         margin-top: 1%;
-}
+        }
 
-.showinfo-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-}
+        .showinfo-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+        }
         
-    .column-left {
-        width: 50%;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        .column-left {
+            width: 50%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
         }
         
         .column-right {
@@ -1608,6 +1649,34 @@ input[id="textemail"] {
     }
     #pdf-button:disabled:active {
         transform: scale(1);
+    }
+    #photobutton {
+        position:absolute;
+        width:fit-content;
+        left:15%;
+        margin-bottom: 25%;
+        background-color: #00b3ff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: transform 0.2s ease; /* Ajoutez une transition pour un effet de douceur */
+        /* Ajoutez une échelle par défaut */
+        transform: scale(1);
+    }
+    #photobutton:active {
+        background-color: #004999;
+        transform: scale(0.9); /* Agrandit le bouton de 10% au survol */
+    }
+    #photobutton:disabled {
+        background-color: #ccc;
+    }
+    .nomFichier {
+        position:absolute;
+        width: 20%;
+        margin-top:1%;
+        left: 10%;
     }
     .classtestred {
         font-size: 14px;

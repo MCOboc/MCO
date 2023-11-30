@@ -10,7 +10,7 @@ const sheetName = workbook.SheetNames[2]; // Obtenez la troisième feuille de ca
 const worksheet = workbook.Sheets[sheetName];
 
 // Liste des clés de colonnes à conserver
-const columnsToKeep = ["Bâtiment", "WGTID", "Circuit", "Code RF", "N° SPA", "Fournisseur", "Désignation complète / modèle", "Finale RJH complète", "Saisie boctrack (O/N)", "Historique stockage", "Loc 1", "Loc2", "Loc 3", "Dernière MàJ Boctrack", "Documents", "Date dernière MCO", "Fréquence(j)", "Prochaine MCO", "Contrôle Visuel", "Action mécanique"]; // Ajoutez d'autres colonnes au besoin
+const columnsToKeep = ["Bâtiment", "WGTID", "Circuit", "Code RF", "N° SPA", "Fournisseur", "Désignation complète / modèle", "Finale RJH complète", "Saisie boctrack (O/N)", "Dernière MàJ Boctrack", "Documents", "Date dernière MCO", "Fréquence(j)", "Prochaine MCO", "Contrôle Visuel", "Action mécanique"]; // Ajoutez d'autres colonnes au besoin
 
 // Convertissez les données de la feuille de calcul en tableau d'objets JSON
 const jsonData = XLSX.utils.sheet_to_json(worksheet, {

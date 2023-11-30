@@ -3,244 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PDF Page</title>
+  <title>MàJ MCO</title>
   <link rel="stylesheet" href="pdf.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/filepond@4.29.2/dist/filepond.min.css" rel="stylesheet">
   <script src="script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script>
-
-  window.jsPDF = window.jspdf.jsPDF;
-
-  function generatePDF() {
-    var doc = new jsPDF();
-    var toemail = document.getElementById('textemail').value;
-    var nomdestinataire = document.getElementById('prenom').value;
-
-    const valeurCodeRF = autreCodeRFInput.value;
-    const valeurWGTID = autreWgtidInput.value;
-    const valeurFournisseur = fournisseur.value;
-    const valeurBatiment = batimentinfo.value;
-    const valeurSalle = salle.value;
-    const valeurDate = datemco.value;
-    const conformVisuO = confresult1.value === 'OUI' ? confresult1.value : '';
-    const conformVisuN = confresult1.value === 'NON' ? confresult1.value : '';
-    const conformMecaO = confresult2.value === 'OUI' ? confresult2.value : '';
-    const conformMecaN = confresult2.value === 'NON' ? confresult2.value : '';
-    const visutext = visueltextfull.value;
-    const mecatext = manueltextfull.value;
-    const valeurnomenmaj = nom.value;
-    const valeurnom = valeurnomenmaj.toUpperCase();
-    const valeurprenom = prenom.value;
-    const valeurdate = date.value;
-    const noticetext = "Les actions présentées ci-dessous sont extraites des notices fournies par les fabricants ou fournisseurs des équipements. Ces documents peuvent être consultés sur la page de recherche avancée du site, en renseignant le numéro WGTID ou Code RF.";
-    const xPosition1 = 11; // Position horizontale
-    const yPosition1 = 90; // Position verticale notice
-    const yPosition2 = 115; // Position verticale contrôle visuel
-    const yPosition3 = 186; // Position verticale action méca
-    const maxWidth1 = 220; // Largeur maximale avant le saut de ligne
-    const maxWidth2 = 150;
-    const lineHeight1 = 5; // Hauteur de ligne (taille de police)
-    const lineHeight2 = 5; // Hauteur de ligne contrôle visuel
-    const textLines1 = doc.splitTextToSize(noticetext, maxWidth1);
-    const textLines2 = doc.splitTextToSize(visutext, maxWidth2);
-    const textLines3 = doc.splitTextToSize(mecatext, maxWidth2);
-    
-        // Ajoutez l'image au PDF
-        doc.addImage("logo boccard.jpg", 'JPEG', 12, 12, 35, 10);
-        doc.addImage("logo cea.jpg", 'JPEG', 170, 8, 20, 20);
-        doc.setLineWidth(0.1); 
-        doc.line(10, 5, 200, 5) // Ligne horizontale haute en-tête
-        doc.setLineWidth(0.1); 
-        doc.line(10, 30, 200, 30) // Ligne horizontale bas en-tête
-        doc.setLineWidth(0.1);
-        doc.line(10, 5, 10, 30) //Ligne verticale gauche-gauche en-tête
-        doc.setLineWidth(0.1);
-        doc.line(50, 5, 50, 30) //Ligne verticale gauche-droite en-tête
-        doc.setLineWidth(0.1);
-        doc.line(160, 5, 160, 30) // Ligne verticale droite-gauche en-tête
-        doc.setLineWidth(0.1);
-        doc.line(200, 5, 200, 30) // Ligne verticale droite-droite en-tête
-        doc.setLineWidth(0.1);
-        doc.line(10, 50, 200, 50) // Ligne supérieure cadre
-        doc.setLineWidth(0.1);
-        doc.line(10, 50, 10, 287) // Ligne gauche cadre
-        doc.setLineWidth(0.1);
-        doc.line(200, 50, 200, 287) // Ligne droite cadre
-        doc.setLineWidth(0.1);
-        doc.line(10, 287, 200, 287) // Ligne inférieure cadre
-        doc.setLineWidth(0.1);
-        doc.line(10, 257, 200, 257) // Ligne inférieure supp signature
-        doc.setLineWidth(0.1);
-        doc.line(70, 257, 70, 287) // Séparateur signature
-        doc.setLineWidth(0.1);
-        doc.line(140, 257, 140, 287) // Séparateur signature
-        doc.setLineWidth(0.1);
-        doc.line(10, 80, 200, 80) // Ligne horizontale inf refs 
-        doc.setLineWidth(0.1);
-        doc.line(10, 65, 200, 65) // Ligne horizontale sup refs 
-        doc.setLineWidth(0.1);
-        doc.line(70, 50, 70, 80) // Séparateur refs
-        doc.setLineWidth(0.1);
-        doc.line(140, 50, 140, 80) // Séparateur refs
-        doc.line(10, 85, 200, 85) // Ligne horizontale inf refs 
-        doc.setLineWidth(0.1);
-        doc.line(150, 85, 150, 257) // Ligne Verticale gauche conformité
-        doc.setLineWidth(0.1);
-        doc.line(150, 95, 200, 95) // Ligne bas Conformité
-        doc.setLineWidth(0.1);
-        doc.line(10, 105, 200, 105) // Ligne bas Oui/Non 
-        doc.setLineWidth(0.1);
-        doc.line(175, 95, 175, 257) // Séparateur conformité
-        doc.setLineWidth(0.1);
-        doc.line(10, 176, 200, 176) // Séparateur maintenance type
-        doc.setLineWidth(0.1);
-
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Opérateur", 40, 262, null, null, "center");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Nom:", 11, 268, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text(valeurnom, 21, 268, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Prénom:", 11, 273, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text(valeurprenom, 26, 273, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Date:", 11, 278, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text(valeurdate, 21, 278, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Visa:", 11, 283, null, null, "left");
-
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Responsable MCO", 105, 262, null, null, "center");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Nom:", 71, 268, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Prénom:", 71, 273, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Date:", 71, 278, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Visa:", 71, 283, null, null, "left");
-
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Responsable Qualité", 170, 262, null, null, "center");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Nom:", 141, 268, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Prénom:", 141, 273, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Date:", 141, 278, null, null, "left");
-        doc.setFontSize(10);  // Définir la taille de police à 12 points
-        doc.text("Visa:", 141, 283, null, null, "left");
-
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("WGTID :", 40, 55, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text(valeurWGTID, 39, 62, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Code RF :", 105, 54, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text(valeurCodeRF, 105, 62, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Fournisseur / Fabricant :", 170, 54, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text(valeurFournisseur, 170, 62, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Bâtiment :", 40, 69, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text(valeurBatiment, 40, 77, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Salle :", 105, 69, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text(valeurSalle, 105, 77, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Date dernière MCO :", 170, 69, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text(valeurDate, 170, 77, null, null, "center");
-
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Conforme", 175, 90, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Oui (O)", 162.5, 100, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text(conformVisuO, 162.5, yPosition2, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Non (N)", 187.5, 100, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text(conformVisuN, 187.5, yPosition2, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Oui (O)", 162.5, 100, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text(conformMecaO, 162.5, yPosition3, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Non (N)", 187.5, 100, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text(conformMecaN, 187.5, yPosition3, null, null, "center");
-
-
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Contrôle Visuel", 11, 109, null, null, "left");
-        textLines2.forEach((line, index) => {
-        doc.setFontSize(12);
-        doc.text(line, xPosition1, yPosition2 + index * lineHeight2);
-        });
-
-        doc.setLineWidth(0.1);
-        doc.line(10, 110, 41, 110) // Cadre texte
-        doc.setLineWidth(0.1);
-        doc.line(41, 110, 41, 105) // Cadre texte
-
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("Action mécanique", 11, 180, null, null, "left");
-        textLines3.forEach((line, index) => {
-        doc.setFontSize(12);
-        doc.text(line, xPosition1, yPosition3 + index * lineHeight2);
-        });
-
-        doc.setLineWidth(0.1);
-        doc.line(10, 181, 46, 181) // Cadre texte
-        doc.setLineWidth(0.1);
-        doc.line(46, 181, 46, 176) // Cadre texte
-        textLines1.forEach((line, index) => {
-        doc.setFontSize(10);
-        doc.text(line, xPosition1, yPosition1 + index * lineHeight1);
-        });
-
-        doc.    setFontSize(16);  // Définir la taille de police à 12 points
-        doc.text("RJH Lot D10", 105, 15, null, null, "center");
-        doc.setFontSize(12);  // Définir la taille de police à 12 points
-        doc.text("MCO - Suivi stockage et maintenance", 105, 25 , null, null, "center");
-
-        doc.save('document.pdf');
-
-        // Envoi du PDF généré au serveur
-    // Configurer Email.js avec votre User ID
-    emailjs.init("hyPJumy2Kqvs0U0lm");
-
-// Envoyer l'e-mail avec le fichier PDF attaché
-var params = {
-    to_email: toemail, // Adresse e-mail du destinataire
-    from_name: "MCO", // Votre nom
-    message: "Bonjour ", // Message du e-mail
-    user: nomdestinataire,
-}
-// Utiliser le service Email.js pour envoyer l'e-mail
-emailjs.send("service_mcobocc", "template_d4h1b4r", params)
-    .then(function(response) {
-        console.log("E-mail envoyé avec succès", response);
-    }, function(error) {
-        console.log("Erreur lors de l'envoi de l'e-mail", error);
-    });
-}
-</script>
-<script src="formulaire.js"></script>
+  <script src="https://unpkg.com/filepond@4.29.2/dist/filepond.min.js"></script>
+  <script src="formulaire.js"></script>
 </head>
 <body>
     <div class="container" id="container">
@@ -360,7 +135,11 @@ emailjs.send("service_mcobocc", "template_d4h1b4r", params)
             <input type="text" id="date" name="date" placeholder="Sélectionnez une date">
             <label class="email" for ="email">Votre e-mail :</label>
             <input type="text" id="textemail" name="textemail" placeholder="example@abc.com">
-            <button class="pdf-button" id="pdf-button"  onclick="generatePDF()" disabled>Générer le pdf</button>
+            <button clas="photobutton" id="photobutton" onclick="ajouterPhoto(event)">
+                <i class="fa-solid fa-camera"></i></button>
+            <input type="file" id="fileInput" class="filepond" accept="image/jpeg" style="display: none;" onchange="chargerImage(event)">
+            <p class="nomFichier" id="nomFichier"></p>
+            <button class="pdf-button" id="pdf-button"  onclick="generatePDF()">Générer le pdf</button>
         </div>
     </div>
 </body>
